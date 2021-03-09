@@ -1,8 +1,6 @@
 name: Run packer build
 
-on:
-  pull_request:
-    branches: [ main ]
+on: [ pull_request ]
 
 jobs:
   packer_build:
