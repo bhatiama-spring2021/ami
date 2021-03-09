@@ -11,7 +11,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Validate Packer Template
+      - name: Validate Packer
         uses: hashicorp/packer-github-actions@master
         with:
           command: validate
