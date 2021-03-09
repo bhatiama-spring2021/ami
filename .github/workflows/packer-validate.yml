@@ -1,12 +1,9 @@
-name: Run packer build
+name: Run packer validate
 
-on:
-  push:
-    branches:
-      - "main"
+on: [pull_request]
 
 jobs:
-  packer_build:
+  packer_validate:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
@@ -17,12 +14,6 @@ jobs:
         with:
           command: validate
           arguments: --syntax-only
-          target: ami.json
-
-      - name: Build Artifact
-        uses: hashicorp/packer-github-actions@master
-        with:
-          command: build
           target: ami.json
         env:
           AWS_ACCESS_KEY_ID: ${{ secrets.AWS_ACCESS_KEY_ID }}
