@@ -10,7 +10,7 @@ jobs:
       - name: Checkout repository
         uses: actions/checkout@v2
 
-      - name: Validate Packer
+      - name: Validate Packer Template
         uses: hashicorp/packer-github-actions@master
         with:
           command: validate
