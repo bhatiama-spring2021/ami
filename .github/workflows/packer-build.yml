@@ -1,12 +1,12 @@
 name: Run packer build
 
 on:
-  push:
-    branches:
-      - "main"
+  pull_request:
+    types: [closed]
 
 jobs:
   packer_build:
+    if: github.event.pull_request.merged == true
     runs-on: ubuntu-latest
     steps:
       - name: Checkout repository
