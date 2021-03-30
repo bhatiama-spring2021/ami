@@ -38,3 +38,5 @@ Build packer templates using this command:
         -var 'aws_secret_key=bar' \
         -var 'aws_region=us-east-1' \
         template_name.json
+
+demo
